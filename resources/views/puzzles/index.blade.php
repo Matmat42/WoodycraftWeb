@@ -14,7 +14,7 @@
                             <tr>
                                 <th class="px-2 py-2 text-xs text-gray-500">#</th>
                                 <th class="px-2 py-2 text-xs text-gray-500">Nom</th>
-                                <th class="px-2 py-2 text-xs text-gray-500"></th>
+                                <th class="px-2 py-2 text-xs text-gray-500">Prix</th>
                                 <th class="px-2 py-2 text-xs text-gray-500"></th>
                                 <th class="px-2 py-2 text-xs text-gray-500"></th>
                             </tr>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\PuzzleController;
 use App\Http\Controllers\ProfileController;
@@ -38,5 +39,9 @@ Route::get('/', [CategorieController::class, 'index'])->name('home');
 Route :: resource ('puzzles',PuzzleController::class) -> middleware ('auth');
 Route :: resource ('categorie',CategorieController::class) -> middleware ('auth');
 Route::get('/categorie/{id}', [CategorieController::class, 'show'])->name('categorie.show');
+
+Route::get('/index', [CategorieController::class, 'index']);
+Route::get('/puzzles/{id}', [PuzzleController::class, 'show'])->name('puzzles.show');
+Route::post('/panier/ajouter/{id}', [CartController::class, 'addPuzzleToCart'])->name('cart.addPuzzle');
 
 require __DIR__.'/auth.php';

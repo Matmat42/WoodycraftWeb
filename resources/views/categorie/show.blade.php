@@ -1,28 +1,34 @@
+{{-- resources/views/puzzles/show.blade.php --}}
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ $categorie->nom }} - @lang('Produits')
+        <h2 class="text-xl font-semibold text-gray-800 leading-tight">
+            {{ $puzzles->nom }}
         </h2>
     </x-slot>
 
-    <div class="container py-6">
-        <h3 class="text-2xl font-semibold">Produits de la catégorie : {{ $categorie->nom }}</h3>
+    <div class="max-w-4xl mx-auto p-6">
+        {{-- Image du puzzle --}}
+        <img src="{{ asset('storage/' . $puzzle->image) }}" alt="{{ $puzzle->nom }}" class="w-full h-80 object-cover rounded mb-4">
 
-        <!-- Affichage des puzzles -->
-        <div class="grid grid-cols-3 gap-6 mt-4">
-            @forelse ($categorie->puzzles as $puzzle)
-                <div class="p-4 border rounded shadow">
-                    <img src="{{ asset('storage/'.$puzzle->image) }}" alt="{{ $puzzle->nom }}" class="w-full h-40 object-cover rounded">
-                    <h4 class="mt-2 text-lg font-semibold">{{ $puzzle->nom }}</h4>
-                    <p class="text-gray-500">{{ $puzzle->description }}</p>
-                    <div class="mt-2">
-                        <span class="text-xl font-bold">{{ $puzzle->prix }} €</span>
-                    </div>
-                    <a href="{{ route('puzzles.show', $puzzle->id) }}" class="text-blue-500 hover:text-blue-700">Voir plus</a>
-                </div>
-            @empty
-                <p class="text-gray-500">Aucun produit trouvé dans cette catégorie.</p>
-            @endforelse
-        </div>
+        {{-- Description --}}
+        <p class="text-gray-700 mb-4">{{ $puzzle->description }}</p>
+
+        {{-- Prix --}}
+        <p class="text-xl font-bold mb-6">€{{ number_format($puzzle->prix, 2) }}</p>
+
+        {{-- Formulaire d'ajout au panier --}}
+        <form method="POST" action="{{ route('cart.addPuzzle', $puzzle->id) }}">
+            @csrf
+            <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
+                Ajouter au panier
+            </button>
+        </form>
+
+        {{-- Message de succès --}}
+        @if(session('success'))
+            <div class="mt-4 bg-green-100 text-green-800 p-3 rounded">
+                {{ session('success') }}
+            </div>
+        @endif
     </div>
 </x-app-layout>
