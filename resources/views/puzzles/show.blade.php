@@ -5,56 +5,62 @@
         </h1>
     </x-slot>
 
-    <div class="bg-white rounded shadow p-4 flex items-center justify-center">
-    <img
-        src="{{ $puzzle->image_url ?? asset('img/puzzles/placeholder.png') }}"
-        alt="{{ $puzzle->nom }}"
-        class="max-h-[420px] w-auto object-contain"
-        loading="lazy"
-    >
-</div>
+    <div class="max-w-5xl mx-auto mt-8 px-4">
+        <div class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row gap-8">
 
-
-        {{-- Infos produit --}}
-        <div class="bg-white rounded shadow p-6">
-            <div class="text-sm text-gray-600 mb-2">
-                Catégorie :
-                @if($puzzle->categorie)
-                    <a href="{{ route('categories.show', $puzzle->categorie->id) }}"
-                       class="text-blue-700 hover:underline">
-                        {{ $puzzle->categorie->nom }}
-                    </a>
-                @else
-                    —
-                @endif
+            {{-- Image --}}
+            <div class="flex-1 flex items-center justify-center bg-gray-50 rounded-lg p-4">
+                <img
+                    src="{{ $puzzle->image_url ?? asset('img/puzzles/placeholder.png') }}"
+                    alt="{{ $puzzle->nom }}"
+                    class="max-h-[380px] w-auto object-contain"
+                    loading="lazy"
+                >
             </div>
 
-            <p class="text-gray-700 leading-relaxed">
-                {{ $puzzle->description ?: "Magnifique puzzle en bois." }}
-            </p>
+            {{-- Infos produit --}}
+            <div class="flex-1 flex flex-col justify-between">
+                <div>
+                    <div class="text-sm text-gray-500 mb-3">
+                        Catégorie :
+                        @if($puzzle->categorie)
+                            <a href="{{ route('categories.show', $puzzle->categorie->id) }}"
+                               class="text-gray-800 font-medium hover:underline">
+                                {{ $puzzle->categorie->nom }}
+                            </a>
+                        @else
+                            —
+                        @endif
+                    </div>
 
-            <div class="mt-6 text-3xl font-bold">
-                {{ number_format($puzzle->prix, 2, ',', ' ') }} €
-            </div>
-
-            {{-- Ajouter au panier --}}
-            <form action="{{ route('panier.add') }}" method="POST" class="mt-6 space-y-3">
-                @csrf
-                <input type="hidden" name="puzzle_id" value="{{ $puzzle->id }}">
-
-                <label class="block text-sm font-medium text-gray-700">
-                    Quantité
-                </label>
-                <input type="number" name="quantite" value="1" min="1"
-                       class="w-24 rounded border-gray-300" />
-
-                <div class="pt-2">
-                    <button type="submit"
-                            class="inline-flex items-center px-5 py-3 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800">
-                        Ajouter au panier
-                    </button>
+                    <p class="text-gray-700 leading-relaxed">
+                        {{ $puzzle->description ?: "Magnifique puzzle en bois." }}
+                    </p>
                 </div>
-            </form>
+
+                <div class="mt-6">
+                    <div class="text-3xl font-bold text-gray-900 mb-6">
+                        {{ number_format($puzzle->prix, 2, ',', ' ') }} €
+                    </div>
+
+                    <form action="{{ route('panier.add') }}" method="POST" class="space-y-4">
+                        @csrf
+                        <input type="hidden" name="puzzle_id" value="{{ $puzzle->id }}">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Quantité
+                            </label>
+                            <input type="number" name="quantite" value="1" min="1"
+                                   class="w-24 rounded border-gray-300" />
+                        </div>
+                        <button type="submit"
+                                class="w-full inline-flex justify-center items-center px-5 py-3 rounded-lg bg-black text-white font-semibold hover:bg-gray-800">
+                            Ajouter au panier
+                        </button>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
 </x-app-layout>

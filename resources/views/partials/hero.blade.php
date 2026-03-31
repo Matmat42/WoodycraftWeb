@@ -11,7 +11,7 @@
       <div class="mt-5 flex gap-3">
         <a href="{{ route('categories.show', 1) }}" class="inline-flex items-center px-5 py-3 rounded-md text-white"
            style="background:var(--wc-primary)">Découvrir</a>
-        <a href="{{ route('panier.index') }}" class="inline-flex items-center px-5 py-3 rounded-md border"
+        <a href="{{ route('panier.index') }}" class="inline-flex items-center px-5 py-3 rounded-md border border-gray-800 bg-black text-white hover:bg-gray-800"
            style="border-color:var(--wc-primary);color:var(--wc-primary)">Voir mon panier</a>
       </div>
     </div>

@@ -68,7 +68,7 @@
                 </div>
 
                 <a href="{{ route('adresses.create', ['next' => route('commandes.create')]) }}"
-                   class="text-sm underline text-green-700">+ Ajouter une nouvelle adresse</a>
+                   class="text-sm underline text-gray-800">+ Ajouter une nouvelle adresse</a>
 
                 <div>
                     <label for="mode_paiement" class="block text-sm font-medium text-gray-700">Moyen de paiement</label>
@@ -83,11 +83,11 @@
 
                 <div class="pt-2 flex items-center gap-3">
                     <button id="submitOrder" type="submit"
-                            class="inline-flex justify-center px-6 py-3 bg-green-600 text-white text-base font-semibold rounded-lg shadow hover:bg-green-700 focus:outline-none">
+                            style="background-color:#000; color:#fff; padding:0.75rem 1.5rem; border-radius:0.5rem; font-weight:600; border:none; cursor:pointer; font-size:1rem;" onmouseover="this.style.backgroundColor='#374151'" onmouseout="this.style.backgroundColor='#000'">
                         Payer avec PayPal ➜
                     </button>
 
-                    <a href="{{ route('panier.index') }}" class="px-4 py-2 rounded border border-gray-300 text-gray-700 hover:bg-gray-50">
+                    <a href="{{ route('panier.index') }}" style="background-color:#000; color:#fff; padding:0.5rem 1rem; border-radius:0.375rem; border:1px solid #1f2937; text-decoration:none; display:inline-block;" onmouseover="this.style.backgroundColor='#374151'" onmouseout="this.style.backgroundColor='#000'">
                         Annuler
                     </a>
                 </div>

@@ -10,10 +10,10 @@
 
         {{-- Feedback --}}
         @if (session('success'))
-            <div class="bg-green-50 text-green-800 px-4 py-3 rounded">{{ session('success') }}</div>
+            <div class="bg-gray-100 text-gray-800 px-4 py-3 rounded">{{ session('success') }}</div>
         @endif
         @if (session('message'))
-            <div class="bg-blue-50 text-blue-800 px-4 py-3 rounded">{{ session('message') }}</div>
+            <div class="bg-gray-100 text-gray-800 px-4 py-3 rounded">{{ session('message') }}</div>
         @endif
 
         {{-- Entête commande --}}
@@ -47,11 +47,11 @@
 
             <div class="flex items-center gap-3">
                 <a href="{{ route('commandes.facture', $commande) }}"
-                   class="px-4 py-2 rounded bg-green-700 text-white hover:bg-green-800">
+                   class="px-4 py-2 rounded bg-black text-white hover:bg-gray-800">
                     Facture PDF
                 </a>
                 <a href="{{ route('accueil') }}"
-                   class="px-4 py-2 rounded border border-gray-300 text-gray-700 hover:bg-gray-50">
+                   class="px-4 py-2 rounded border border-gray-800 bg-black text-white hover:bg-gray-800">
                     Continuer mes achats
                 </a>
             </div>
@@ -136,7 +136,7 @@
 
                 @if(!$avis)
                     <a href="{{ route('avis.create', $commande) }}"
-                       class="inline-flex items-center px-4 py-2 rounded-md bg-green-700 text-white hover:bg-green-800">
+                       class="inline-flex items-center px-4 py-2 rounded-md bg-black text-white hover:bg-gray-800">
                         Écrire un avis
                     </a>
                 @else

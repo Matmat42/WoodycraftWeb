@@ -11,7 +11,7 @@
                 <ul class="list-disc pl-6 space-y-1">
                     @foreach($categories as $categorie)
                         <li>
-                            <a class="text-indigo-600 underline"
+                            <a class="text-black underline"
                                href="{{ route('categories.show', $categorie->id) }}">
                                 {{ $categorie->nom }}
                             </a>

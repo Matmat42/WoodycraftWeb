@@ -5,7 +5,7 @@
         @if($commandes->isEmpty())
             <div class="bg-amber-50 text-amber-900 border border-amber-200 rounded p-5">
                 Vous n’avez pas encore passé de commande.
-                <a href="{{ route('categories.index') }}" class="underline font-semibold text-green-700">
+                <a href="{{ route('categories.index') }}" class="underline font-semibold text-gray-800">
                     Parcourir les catégories
                 </a>
             </div>
@@ -33,10 +33,10 @@
                                 </span>
                             </td>
                             <td class="px-4 py-3 text-right">
-                                <a href="{{ route('commandes.show', $c) }}" class="inline-flex items-center px-3 py-2 rounded border border-green-700 text-green-700 hover:bg-green-50">
+                                <a href="{{ route('commandes.show', $c) }}" class="inline-flex items-center px-3 py-2 rounded border border-gray-800 text-gray-800 hover:bg-gray-100">
                                     Détail
                                 </a>
-                                <a href="{{ route('commandes.facture', $c) }}" class="ml-2 inline-flex items-center px-3 py-2 rounded bg-green-700 text-white hover:bg-green-800">
+                                <a href="{{ route('commandes.facture', $c) }}" class="ml-2 inline-flex items-center px-3 py-2 rounded bg-black text-white hover:bg-gray-800">
                                     Facture PDF
                                 </a>
                             </td>

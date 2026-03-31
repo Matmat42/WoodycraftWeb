@@ -8,7 +8,7 @@
     <x-puzzles-card>
         <!-- Message de réussite -->
         @if (session()->has('message'))
-            <div class="mt-3 mb-4 list-disc list-inside text-sm text-blue-600">
+            <div class="mt-3 mb-4 list-disc list-inside text-sm text-gray-700">
                 {{ session('message') }}
             </div>
         @endif

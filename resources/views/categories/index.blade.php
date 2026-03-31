@@ -7,8 +7,8 @@
         @foreach($categories as $cat)
             <a href="{{ route('categories.show', $cat->id) }}"
                class="bg-white rounded shadow p-4 hover:shadow-md transition">
-                <div class="font-semibold text-green-900">{{ $cat->nom }}</div>
-                <div class="text-sm text-green-800 mt-1">Voir les puzzles →</div>
+                <div class="font-semibold text-black">{{ $cat->nom }}</div>
+                <div class="text-sm text-gray-500 mt-1">Voir les puzzles →</div>
             </a>
         @endforeach
     </div>

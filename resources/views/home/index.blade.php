@@ -6,15 +6,15 @@
     {{-- HÉRO bannière --}}
     <div class="max-w-6xl mx-auto mt-6">
         <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-            <h3 class="text-2xl font-semibold text-blue-900">
+            <h3 class="text-2xl font-semibold text-black">
                 Construisez vos rêves en 3D avec WoodyCraft
             </h3>
-            <p class="mt-1 text-blue-800">
+            <p class="mt-1 text-gray-700">
                 Découvrez nos catégories et ajoutez vos puzzles au panier.
             </p>
 
             <a href="{{ route('panier.index') }}"
-               class="inline-flex mt-4 px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
+               class="inline-flex mt-4 px-4 py-2 bg-black text-white rounded hover:bg-gray-800">
                 Voir mon panier
             </a>
         </div>
@@ -22,39 +22,39 @@
 
     {{-- Catégories mises en avant --}}
     <div class="max-w-6xl mx-auto mt-8">
-        <h3 class="text-lg font-semibold mb-3 text-blue-900">Catégories</h3>
+        <h3 class="text-lg font-semibold mb-3 text-black">Catégories</h3>
 
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
             @forelse($categories as $cat)
                 <a href="{{ route('categories.show', $cat->id) }}"
                    class="bg-white rounded shadow p-4 hover:shadow-md transition">
-                    <div class="font-semibold text-blue-900">{{ $cat->nom }}</div>
-                    <div class="text-sm text-blue-800 mt-1">Voir la catégorie →</div>
+                    <div class="font-semibold text-black">{{ $cat->nom }}</div>
+                    <div class="text-sm text-gray-700 mt-1">Voir la catégorie →</div>
                 </a>
             @empty
-                <div class="text-sm text-blue-800 col-span-full">Aucune catégorie.</div>
+                <div class="text-sm text-gray-700 col-span-full">Aucune catégorie.</div>
             @endforelse
         </div>
     </div>
 
     {{-- Produits récents --}}
     <div class="max-w-6xl mx-auto mt-10 mb-10">
-        <h3 class="text-lg font-semibold mb-3 text-blue-900">Produits</h3>
+        <h3 class="text-lg font-semibold mb-3 text-black">Produits</h3>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             @forelse($produits as $p)
                 <div class="bg-white rounded shadow p-4">
-                    <div class="font-semibold text-blue-900">{{ $p->nom }}</div>
-                    <div class="text-blue-800 mt-1">
+                    <div class="font-semibold text-black">{{ $p->nom }}</div>
+                    <div class="text-gray-700 mt-1">
                         {{ number_format($p->prix, 2, ',', ' ') }} €
                     </div>
                     <a href="{{ route('categories.show', $p->categorie_id) }}"
-                       class="inline-block mt-3 text-sm text-blue-900 underline">
+                       class="inline-block mt-3 text-sm text-black underline">
                         Voir le puzzle
                     </a>
                 </div>
             @empty
-                <div class="text-sm text-blue-800 col-span-full">Aucun produit pour le moment.</div>
+                <div class="text-sm text-gray-700 col-span-full">Aucun produit pour le moment.</div>
             @endforelse
         </div>
     </div>

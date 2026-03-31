@@ -44,20 +44,20 @@
 
                             <div class="flex items-center gap-2">
                                 <a href="{{ route('puzzles.show', $p) }}"
-                                   class="px-3 py-2 rounded border border-green-700 text-green-700 hover:bg-green-50">
+                                   class="px-3 py-2 rounded border border-gray-800 text-gray-800 hover:bg-gray-100">
                                     Voir
                                 </a>
 
-                                @auth
+                                
                                     <form method="POST" action="{{ route('panier.add') }}">
                                         @csrf
                                         <input type="hidden" name="puzzle_id" value="{{ $p->id }}">
                                         <input type="hidden" name="quantite" value="1">
-                                        <button class="px-3 py-2 rounded bg-green-700 text-white hover:bg-green-800">
+                                        <button class="px-3 py-2 rounded border border-gray-800 text-gray-800 hover:bg-gray-100">
                                             Ajouter
                                         </button>
                                     </form>
-                                @endauth
+                                
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,7 @@
     <div class="max-w-3xl mx-auto p-6">
         {{-- Message/erreurs --}}
         @if (session('message'))
-            <div class="mb-4 px-4 py-3 rounded bg-blue-50 text-blue-800">
+            <div class="mb-4 px-4 py-3 rounded bg-gray-100 text-gray-800">
                 {{ session('message') }}
             </div>
         @endif
@@ -64,12 +64,12 @@
 
                 <div class="flex items-center gap-3">
                     <button type="submit"
-                            class="px-6 py-2 rounded bg-green-700 text-white hover:bg-green-800">
+                            class="px-6 py-2 rounded bg-black text-white hover:bg-gray-800">
                         Envoyer mon avis
                     </button>
 
                     <a href="{{ route('commandes.show', $commande) }}"
-                       class="px-4 py-2 rounded border border-gray-300 text-gray-700 hover:bg-gray-50">
+                       class="px-4 py-2 rounded border border-gray-800 bg-black text-white hover:bg-gray-800">
                         Annuler
                     </a>
                 </div>
