@@ -104,7 +104,7 @@
 
         function refreshButton() {
             if (select.value === 'cheque') {
-                btn.textContent = 'Générer la facture PDF 🧾';
+                btn.textContent = 'Générer la facture PDF';
                 help.textContent = 'Une facture PDF sera générée avec les informations de la commande.';
             } else {
                 btn.textContent = 'Payer avec PayPal ➜';

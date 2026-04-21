@@ -22,6 +22,8 @@
         --wc-primary-dark:#124D2A; --wc-danger:#D94141; --wc-text:#1B1B1B;
       }
       html,body{font-family:"Poppins",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";}
+      
+      
     </style>
 </head>
 <body class="min-h-screen bg-[var(--wc-cream)] text-[var(--wc-text)] antialiased">

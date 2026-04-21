@@ -5,12 +5,12 @@
 
     {{-- HÉRO bannière --}}
     <div class="max-w-6xl mx-auto mt-6">
-        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
             <h3 class="text-2xl font-semibold text-black">
-                Construisez vos rêves en 3D avec WoodyCraft
+                Découvrez notre gamme de puzzle 3D
             </h3>
             <p class="mt-1 text-gray-700">
-                Découvrez nos catégories et ajoutez vos puzzles au panier.
+                
             </p>
 
             <a href="{{ route('panier.index') }}"
